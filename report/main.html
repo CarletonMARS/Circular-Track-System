@@ -1,0 +1,674 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Circular Track System Documentation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="main.tex"> 
+<link rel="stylesheet" type="text/css" href="main.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+
+<h2 class="titleHead">Circular Track System Documentation</h2>
+<div class="author" ><span 
+class="cmr-12">Ghassan Arnouk &amp; David Song</span></div><br />
+<div class="date" ><span 
+class="cmr-12">March 27, 2023</span></div>
+   </div>
+                                                                  
+
+                                                                  
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+   <div class="tableofcontents">
+   &#x00A0;<span class="sectionToc" >1 <a 
+href="#x1-40001" id="QQ2-1-4">Introduction</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2 <a 
+href="#x1-50002" id="QQ2-1-5">System Overview</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3 <a 
+href="#x1-60003" id="QQ2-1-7">Installation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >3.1 <a 
+href="#x1-70003.1" id="QQ2-1-8">cloning the Github repository and installing commands</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4 <a 
+href="#x1-80004" id="QQ2-1-9">QuickStart</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.1 <a 
+href="#x1-90004.1" id="QQ2-1-10">Preparing Setup</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2 <a 
+href="#x1-100004.2" id="QQ2-1-11">Aligning horn and Surface</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.3 <a 
+href="#x1-110004.3" id="QQ2-1-13">Performing Measurement</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5 <a 
+href="#x1-120005" id="QQ2-1-14">General Information</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >5.1 <a 
+href="#x1-130005.1" id="QQ2-1-15">script location and commands</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.1 <a 
+href="#x1-140005.1.1" id="QQ2-1-16">getfreq</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.2 <a 
+href="#x1-150005.1.2" id="QQ2-1-17">setfreq</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.3 <a 
+href="#x1-160005.1.3" id="QQ2-1-18">setpwr</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.4 <a 
+href="#x1-170005.1.4" id="QQ2-1-19">rotate</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.5 <a 
+href="#x1-180005.1.5" id="QQ2-1-20">display4</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.6 <a 
+href="#x1-190005.1.6" id="QQ2-1-21">asweep</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.7 <a 
+href="#x1-200005.1.7" id="QQ2-1-22">fsweep</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.8 <a 
+href="#x1-210005.1.8" id="QQ2-1-23">nisetall</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.9 <a 
+href="#x1-220005.1.9" id="QQ2-1-24">nisetone</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.10 <a 
+href="#x1-230005.1.10" id="QQ2-1-25">setifbw</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >5.2 <a 
+href="#x1-240005.2" id="QQ2-1-26">Rotary Stage</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >5.3 <a 
+href="#x1-250005.3" id="QQ2-1-27">Antennae mount</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >5.4 <a 
+href="#x1-260005.4" id="QQ2-1-28">DUT Stand</a></span>
+<br />   &#x00A0;<span class="sectionToc" >6 <a 
+href="#x1-270006" id="QQ2-1-29">VNA</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7 <a 
+href="#x1-280007" id="QQ2-1-30">NI PXIe</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.1 <a 
+href="#x1-290007.1" id="QQ2-1-31">Troubleshooting</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8 <a 
+href="#x1-300008" id="QQ2-1-33">Code and Libraries</a></span>
+   </div>
+                                                                  
+
+                                                                  
+   <h3 class="likesectionHead"><a 
+ id="x1-2000"></a>List of Figures</h3>
+   <div class="tableofcontents"><span class="lofToc" >&#x00A0;<a 
+href="#x1-5002">1                                                                                System setup
+diagram</a></span><br /><span class="lofToc" >&#x00A0;<a 
+href="#x1-10002">2                                                                                Alignment
+of horns using a laser level</a></span><br />
+   </div>
+                                                                  
+
+                                                                  
+   <h3 class="likesectionHead"><a 
+ id="x1-3000"></a>Listings</h3>
+   <div class="tableofcontents"><a 
+href="#x1-29002">1                                                                                Setting multiple
+NI channels</a><br 
+class="newline" />
+   </div>
+                                                                  
+
+                                                                  
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-40001"></a>Introduction</h3>
+<!--l. 36--><p class="noindent" >The circular track system is currently being used to test a variety of surfaces and
+their response to EM excitation in the X-Band (8-12 GHz). It consists of 3
+main components, the Agilent 8720ES Vector Network Analyzer (VNA)
+and associated antennae apparatus, the rotary stage, and associated control
+apparatus, and finally the National Instruments (NI) PXIe-1071 Modular
+Instrumentation body. The 3 components will be discussed in further detail
+below.
+                                                                  
+
+                                                                  
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-50002"></a>System Overview</h3>
+<div class="center" 
+>
+<!--l. 39--><p class="noindent" >
+<!--l. 40--><p class="noindent" ><img 
+src="annotated_figure.jpg" alt="PIC"  
+width="345" height="345" > <a 
+ id="x1-5001r1"></a>
+<a 
+ id="x1-5002"></a>
+<br />                                                                  <div class="caption" 
+><span class="id">
+Figure&#x00A0;1: </span><span  
+class="content">System setup diagram                                       </span></div><!--tex4ht:label?: x1-5001r2 -->
+</div>
+<!--l. 43--><p class="noindent" >The setup is shown below, With a DUT set up on the stand. The locations of the major
+components are indicated
+<!--l. 45--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-60003"></a>Installation</h3>
+<!--l. 46--><p class="noindent" >This section outlines the installation, and update of the package. We cannot assume
+that the computer in the nearfield room will always have the script locally
+available.
+<!--l. 48--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-70003.1"></a>cloning the Github repository and installing commands</h4>
+<!--l. 49--><p class="noindent" >The Github repository can be cloned either through Github gui, Git CLI or simply
+downloading the zip file from the Github page. It can be accessed at the following
+link: <a 
+href="https://github.com/kgein/MARS-CircularTrackSystem" ><span id="textcolor1">MARS REPO</span></a>. please contact Keigan MacDonell for access to the repository ().
+When the folder is in the appropriate directory, run the following command in the
+command prompt opened using anaconda navigator: either open it from anaconda
+navigator or the start menu:
+<div class="center" 
+>
+<!--l. 50--><p class="noindent" >
+<!--l. 51--><p class="noindent" ><img 
+src="asdasda.png" alt="PIC"  
+width="172" height="172" > <img 
+src="asdasdaaffwaf.png" alt="PIC"  
+width="172" height="172" ></div>
+<!--l. 54--><p class="noindent" >Ensure that the environment is set as above, ie. you are working inside the nearfield
+environement, then run the following code: <br 
+class="newline" /><br 
+class="newline" /><span 
+class="colorbox" id="colorbox2"><span 
+class="cmtt-10">pip install --editable .</span></span><br 
+class="newline" /><br 
+class="newline" />The ctrack script and all dependencies are now installed
+                                                                  
+
+                                                                  
+<!--l. 57--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-80004"></a>QuickStart</h3>
+<!--l. 58--><p class="noindent" >This section will detail how to quickly get set up to take an angle sweep measurement
+from -70 to 70 degrees around the surface. The PXIe is not used in this
+case
+<!--l. 60--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
+ id="x1-90004.1"></a>Preparing Setup</h4>
+<!--l. 61--><p class="noindent" >Firstly ensure that the VNA has been on for at least one hour before taking
+measurements. This is to ensure that the VNA has warmed up to give the most
+accurate results. The BBBBB or AAAAA calibration can be used, or it is
+highly recommended to re-calibrate if any of the connectors or cables have
+changed.<br 
+class="newline" />
+<!--l. 63--><p class="indent" >   Ensure that all the connections are plugged in as follows:<br 
+class="newline" />
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 65--><p class="noindent" >VNA is plugged in and on, and the GPIB connector is plugged into the
+     computer&#8217;s USB port
+     </li>
+     <li class="itemize">
+     <!--l. 66--><p class="noindent" >Ensure both TX and RX horns have the coaxial cables connected tightly
+     with the proper torque setting (0.9 Nm)
+     </li>
+     <li class="itemize">
+     <!--l. 67--><p class="noindent" >Ensure that that the power supply is plugged in and connected to the
+     motor controller board.
+     </li>
+     <li class="itemize">
+     <!--l. 68--><p class="noindent" >Ensure Arduino is plugged into the computer USB port</li></ul>
+<!--l. 70--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">4.2   </span> <a 
+ id="x1-100004.2"></a>Aligning horn and Surface</h4>
+<!--l. 71--><p class="noindent" >When all connections are properly made, power on all apparatus. Align the the horns
+using the laser apparatus, as shown below:
+<div class="center" 
+>
+<!--l. 72--><p class="noindent" >
+                                                                  
+
+                                                                  
+<!--l. 73--><p class="noindent" ><img 
+src="imgpsh_fullsize_anim (1).jpg" alt="PIC"  
+width="345" height="345" > <a 
+ id="x1-10001r2"></a>
+<a 
+ id="x1-10002"></a>
+<br />                                                                  <div class="caption" 
+><span class="id">
+Figure&#x00A0;2: </span><span  
+class="content">Alignment of horns using a laser level                          </span></div><!--tex4ht:label?: x1-10001r4 -->
+</div>
+<!--l. 76--><p class="noindent" >The stand uses elastics to hold the surface securely in place. Ensure that the notches
+accept the edge of the surface to ensure a zero degree incident angle at the resting
+position. The stand indexes into a notch in the rotary stage, so do not force the stand
+into position, it will only fit in one direction.
+   <h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
+ id="x1-110004.3"></a>Performing Measurement</h4>
+<!--l. 78--><p class="noindent" >Navigate to the desired save directory, and create a folder called <span 
+class="colorbox" id="colorbox3"><span 
+class="cmtt-10">cli</span><span 
+class="cmtt-10">_measurements</span></span>.
+This is done to avoid overwriting previous data, and to ensure that the user knows
+where the saved data is <br 
+class="newline" />When the horns are level, the arm may be moved to the -70 degree location
+(Clockwise from the original resting position) using the following command:
+<div class="center" 
+>
+<!--l. 80--><p class="noindent" >
+<div 
+class="colorbox" id="colorbox4"><span 
+class="cmtt-10">ctrack rotate -d 70 l</span></div>
+</div>
+<!--l. 83--><p class="noindent" >This will move the arm to 70 degrees clockwise position. The sweep will start when the
+following command is executed. The <span 
+class="colorbox" id="colorbox5"><span 
+class="cmtt-10">-n</span></span> option allows you to specify the name of the
+sweep, as seen below, replacing <span 
+class="colorbox" id="colorbox6"><span 
+class="cmtt-10">name</span></span> with the desired name. The command
+will autogenerate a directory structure to save the results as long as the
+<span 
+class="colorbox" id="colorbox7"><span 
+class="cmtt-10">cli</span><span 
+class="cmtt-10">_measurements</span></span> folder is present, but this can be overwritten if needed with a <span 
+class="colorbox" id="colorbox8"><span 
+class="cmtt-10">-p</span></span>
+command.
+<div class="center" 
+>
+<!--l. 85--><p class="noindent" >
+<div 
+class="colorbox" id="colorbox9"><span 
+class="cmtt-10">ctrack asweep -a -70 70 -s 0.5 -n name</span></div>
+</div>
+<!--l. 88--><p class="noindent" >This will begin a sweep from -70 degrees to 70 degrees consisting of a 140 degree arc,
+with 280 distinct data points (a 0.5 degree sweep increment).<br 
+class="newline" />The sweep will take about 10 minutes to complete, after which the results are output
+as a CSV file which can be used as desired for further data processing.
+                                                                  
+
+                                                                  
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-120005"></a>General Information</h3>
+<!--l. 92--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">5.1   </span> <a 
+ id="x1-130005.1"></a>script location and commands</h4>
+<!--l. 93--><p class="noindent" >The script is currently located at:<br 
+class="newline" /><span 
+class="colorbox" id="colorbox10"><span 
+class="cmtt-10">C/Users/keiganmacdonell/OneDrive - Carleton University/REPOS/</span></span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox11"><span 
+class="cmtt-10">MARS-CircularTrackSystem/old/templates/python/may13</span></span>. <br 
+class="newline" />It is backed up as well to github. One does not need to be in this directory to run the
+scripts, the only requirement is to create a folder called <span 
+class="colorbox" id="colorbox12"><span 
+class="cmtt-10">cli</span><span 
+class="cmtt-10">_measurements</span></span> in the
+current CMD promt directory<br 
+class="newline" />
+<!--l. 96--><p class="indent" >   The following is a comprehensive list of all commands currently implemented in
+the script. The whole script is modular and uses shallow wrapper functions to
+excecute the underlying code, using the click python library:
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.1   </span> <a 
+ id="x1-140005.1.1"></a>getfreq</h5>
+<!--l. 98--><p class="noindent" >This command returns a FreqSweepParams object with the frequency sweep start,
+end, number of points, power and averaging. It will also print the information to the
+console screen. <br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox13"><span 
+class="cmtt-10">ctrack getfreq</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox14"><span 
+class="cmtt-10">start:8.000E+09 stop:1.200E+10 points:201 power:-10.00 averaging:1</span></span>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.2   </span> <a 
+ id="x1-150005.1.2"></a>setfreq</h5>
+<!--l. 104--><p class="noindent" >This command will allow a user to specifiy the start and end frequencies
+(specify in GHz, conversion is automatic) and the number of points. If an
+invalid entry is performed, the VNA will default to a specific value. The
+following will set a frequency sweep from 8 GHz to 12 GHz with 1601 points.
+<br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox15"><span 
+class="cmtt-10">ctrack setfreq -s 8 -e 12 -p 1601</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />This command produces no output, but the results can be easily checked with a
+<span 
+class="colorbox" id="colorbox16"><span 
+class="cmtt-10">getfreq</span></span> command
+                                                                  
+
+                                                                  
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.3   </span> <a 
+ id="x1-160005.1.3"></a>setpwr</h5>
+<!--l. 110--><p class="noindent" >This command allows a user to specify the power in dB for the sweep, from +5 to -80
+dB <br 
+class="newline" /><br 
+class="newline" />Use:<br 
+class="newline" /><span 
+class="colorbox" id="colorbox17"><span 
+class="cmtt-10">ctrack setpwr -p -10</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />No output but can be again checked as above.
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.4   </span> <a 
+ id="x1-170005.1.4"></a>rotate</h5>
+<!--l. 116--><p class="noindent" >This command allows the user to quickly rotate the arm a desired number of degrees
+clockwise or counterclockwise. The frame of reference is facing the stage from the end
+of the table. A &#8216;l&#8217; or &#8216;r&#8217; at the end of the command denotes the direction (l = cw, r =
+ccw) <br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox18"><span 
+class="cmtt-10">ctrack rotate -d 70 l</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />The arm will rotate as long as the power supply is on
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.5   </span> <a 
+ id="x1-180005.1.5"></a>display4</h5>
+<!--l. 122--><p class="noindent" >This command switches the VNA display to a 4 window display with all S
+parameters shown. <br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox19"><span 
+class="cmtt-10">ctrack display4</span></span><br 
+class="newline" /><br 
+class="newline" />
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.6   </span> <a 
+ id="x1-190005.1.6"></a>asweep</h5>
+<!--l. 126--><p class="noindent" >This script runs a sweep of angles from the start location to end location.
+<br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox20"><span 
+class="cmtt-10">ctrack asweep -a -70 70 -s 0.5 -n PEC</span><span 
+class="cmtt-10">_0db</span><span 
+class="cmtt-10">_sweep</span><span 
+class="cmtt-10">_2</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />Console window will output step feedback and current angle, while arm will move
+and take measurements. Data is saved in the directory the script is run from in a
+                                                                  
+
+                                                                  
+folder called <span 
+class="colorbox" id="colorbox21"><span 
+class="cmtt-10">cli</span><span 
+class="cmtt-10">_measurements</span></span>
+<!--l. 132--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.7   </span> <a 
+ id="x1-200005.1.7"></a>fsweep</h5>
+<!--l. 133--><p class="noindent" >This command will perform a stationary sweep at the specified angle <br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox22"><span 
+class="cmtt-10">ctrack fsweep -a 0 -n PEC</span><span 
+class="cmtt-10">_0db</span><span 
+class="cmtt-10">_sweep</span><span 
+class="cmtt-10">_2</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />Will save data in a folder in the directory the script is run from called
+<span 
+class="colorbox" id="colorbox23"><span 
+class="cmtt-10">cli</span><span 
+class="cmtt-10">_measurements</span></span>
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.8   </span> <a 
+ id="x1-210005.1.8"></a>nisetall</h5>
+<!--l. 139--><p class="noindent" >This script sets all channels on the NI PXIe module to the given voltage
+<br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox24"><span 
+class="cmtt-10">ctrack nisetall -v 2</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />Sets all channels on the NI to 2 volts
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.9   </span> <a 
+ id="x1-220005.1.9"></a>nisetone</h5>
+<!--l. 145--><p class="noindent" >This script sets <span 
+class="cmbx-10">one </span>channel on the NI PXIe module to the given voltage
+<br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox25"><span 
+class="cmtt-10">ctrack nisetone -v 2 -c 0</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />Sets channel 0 on the NI to 2 volts. One can write a series of commands in a batch
+file to precisely set all desired channels to the right voltage quickly
+   <h5 class="subsubsectionHead"><span class="titlemark">5.1.10   </span> <a 
+ id="x1-230005.1.10"></a>setifbw</h5>
+<!--l. 151--><p class="noindent" >This script sets the IF filter bandwidth to the desired value. The values are discrete
+and can be set to 10, 30, 100, 300, 1000, 3000, 3700 or 6000 Hz respectively.
+<br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">use</span><br 
+class="newline" /><span 
+class="colorbox" id="colorbox26"><span 
+class="cmtt-10">ctrack setifbw -f 3000</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmbx-10">Expected output example</span><br 
+class="newline" />Sets IF filter BW to 3000 Hz.
+                                                                  
+
+                                                                  
+   <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
+ id="x1-240005.2"></a>Rotary Stage</h4>
+<!--l. 158--><p class="noindent" >The rotary stage is a <a 
+href="https://www.robotdigg.com/product/1628/PT-GD201-203-and-204-Stepper-Motorized-Electric-Rotary-Table" ><span id="textcolor27">RobotDigg PT-GD201</span></a> driven by a NEMA-17 form
+factor motor. The motor is a bipolar stepper, with 4 inputs which can be
+driven by a variety of different controllers. The current motor is capable of
+handling 1.5 Amps maximum under load. The driver board being used is a
+MP6500 Stepper Motor Driver Carrier by Pololu but any similar driver can
+be used such as the DRV8825 that can handle at least 1 amp of current
+output continuously. The stage is calibrated so that one full revolution of
+the stepper motor shaft is equivalent to a 2 degree movement of the upper
+rotating portion of the stage. Thus a conversion factor can be obtained to
+convert between number of steps and number of degrees (1 degree = 100
+steps).<br 
+class="newline" />
+<!--l. 160--><p class="indent" >   The motor system is driven by an arduino uno, as a cheap way to interface the
+serial commands from the python script to the rotary stage. A breakdown of the
+entire system is shown below on a breadboard. The actual system is contained inside
+an enclosure near the setup:
+   <h4 class="subsectionHead"><span class="titlemark">5.3   </span> <a 
+ id="x1-250005.3"></a>Antennae mount</h4>
+<!--l. 162--><p class="noindent" >The antennae are mounted on a set of mounts that allow the variation of the
+antennae polarization in the x and y directions. The diagrams below show the
+operation of the mount:
+   <h4 class="subsectionHead"><span class="titlemark">5.4   </span> <a 
+ id="x1-260005.4"></a>DUT Stand</h4>
+<!--l. 164--><p class="noindent" >The DUT stand is designed to hold planar metasurfaces of various forms
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-270006"></a>VNA</h3>
+<!--l. 166--><p class="noindent" >The VNA being used is the Agilent 8720ES. It is capable of producing frequencies
+from 50 MHz to 20 GHz, at a variety of power ranges. Each frequency sweep can
+consist up to 1601 distinct points. Many of these features can be controlled to a
+degree with the scripts. As described in section 4.1 there are commands to set various
+aspects of the sweep, including start and stop frequencies and number of points as
+well as port power.
+   <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
+ id="x1-280007"></a>NI PXIe</h3>
+                                                                  
+
+                                                                  
+<!--l. 169--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">7.1   </span> <a 
+ id="x1-290007.1"></a>Troubleshooting</h4>
+<!--l. 170--><p class="noindent" >For some reason, the PXIe will sometimes show an amber LED on the interface
+connection, this means that the device is working but not connected. There are a set
+of steps to perform to ensure it is detected properly. First power off the computer
+and the PXIe. Unplug the AC cable from the PXIe and hold the power button for 10
+seconds. Re-insert the power cable, and turn on the PXIe while ensuring the
+computer is powered off. Then power the computer on. This should allow for the
+PXIe to be detected and one can open the NI MAX software to verify functionality. If
+this is still not working, ensure that the thunderbolt 4 cable is plugged into the
+thunderbolt 4 port on the computer, denoted by a lighting bolt surrounded by a
+square The NI PXIe is controllable through the NI MAX gui, to set proper bias
+voltages through the analog output module. This is especially useful for testing
+active metasurfaces. Script commands allow for the pxie to be set easily.
+A sample batch script below shows how to set a bias, then run a sweep:
+<!--l. 172-->
+<a 
+ id="x1-29001r1"></a>
+<a 
+ id="x1-29002"></a>
+<br /> <div class="caption" 
+><span class="id">Listing&#x00A0;1: </span><span  
+class="content">Setting multiple NI channels</span></div><!--tex4ht:label?: x1-29001r7 --><pre class="lstlisting" id="listing-1"><span class="label"><a 
+ id="x1-29003r1"></a></span><span style="color:#000000"><span 
+class="cmtt-10">@echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">off</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29004r2"></a></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29005r3"></a></span><span style="color:#000000"><span 
+class="cmtt-10">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">&#8216;&#8216;</span></span><span style="color:#000000"><span 
+class="cmtt-10">Setting</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">NI</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">Voltages</span></span><span style="color:#000000"><span 
+class="cmtt-10">"</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29006r4"></a></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29007r5"></a></span><span style="color:#000000"><span 
+class="cmtt-10">ctrack</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">nisetone</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">c</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">0</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">v</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">1</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29008r6"></a></span><span style="color:#000000"><span 
+class="cmtt-10">ctrack</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">nisetone</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">c</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">1</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">v</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">2</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29009r7"></a></span><span style="color:#000000"><span 
+class="cmtt-10">ctrack</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">nisetone</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">c</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">2</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">v</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">3</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29010r8"></a></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29011r9"></a></span><span style="color:#000000"><span 
+class="cmtt-10">echo</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#x2423;</span></span><span style="color:#000000"><span 
+class="cmtt-10">&#8216;&#8216;</span></span><span style="color:#000000"><span 
+class="cmtt-10">Done</span></span><span style="color:#000000"><span 
+class="cmtt-10">"</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29012r10"></a></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29013r11"></a></span><span style="color:#000000"><span 
+class="cmtt-10">ctrack</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">rotate</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">d</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">70</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">l</span></span><span 
+class="cmtt-10">&#x00A0;</span><br /> 
+<span class="label"><a 
+ id="x1-29014r12"></a></span><span style="color:#000000"><span 
+class="cmtt-10">ctrack</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">asweep</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">a</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">-70</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">70</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">s</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">0.5</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">-</span></span><span style="color:#000000"><span 
+class="cmtt-10">n</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="cmtt-10">name</span></span></pre>
+   
+<!--l. 186--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
+ id="x1-300008"></a>Code and Libraries</h3>
+<!--l. 187--><p class="noindent" >The libraries used are as follows:
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 189--><p class="noindent" >numpy
+     </li>
+     <li class="itemize">
+     <!--l. 190--><p class="noindent" >pyserial
+     </li>
+     <li class="itemize">
+     <!--l. 191--><p class="noindent" >click
+     </li>
+     <li class="itemize">
+     <!--l. 192--><p class="noindent" >nidaqmx
+     </li>
+     <li class="itemize">
+     <!--l. 193--><p class="noindent" >pyvisa</li></ul>
+                                                                  
+
+                                                                  
+    
+</body></html> 
+
+                                                                  
+
+
